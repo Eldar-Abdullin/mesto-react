@@ -2,7 +2,7 @@
     margin: 22px 0 auto 30px;
     display: flex;
     flex-wrap: wrap;
-    max-width: 436px;
+    max-width: 336px;
     }
 @media screen and (max-width:730px) {
     .profile__info {
