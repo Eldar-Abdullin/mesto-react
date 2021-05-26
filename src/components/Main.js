@@ -10,13 +10,13 @@ function Main (props) {
       setUserAvatar(data.avatar);
       setUserName(data.name);
       setUserDescription(data.about)
-    })
-  })
+    }).catch(err => {console.log(err)})
+  }, [])
   const [cards, setCard] = React.useState([])
   React.useEffect(() => {
     api.getAllCards().then(data => {
       setCard(data)
-    })
+    }).catch(err => {console.log(err)})
   }, [])
 return (
 <main>

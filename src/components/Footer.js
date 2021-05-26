@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
 
-function Footer () {
-return (<footer className="footer">
-<p>&copy;2021 Mesto Russia</p>
-</footer>)
+function Footer() {
+  return (
+    <footer className="footer">
+      <p>&copy;2021 Mesto Russia</p>
+    </footer>
+  );
 }
-export default Footer
+export default Footer;
