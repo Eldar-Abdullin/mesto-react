@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <body className="background-color">
+    <div className="background-color">
       <div className="App">
         <div className="page">
           <Header />
@@ -125,7 +125,7 @@ function App() {
           <Footer />
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 
