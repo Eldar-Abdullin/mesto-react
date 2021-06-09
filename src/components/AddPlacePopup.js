@@ -1,17 +1,24 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
 function AddPlacePopup(props) {
-    const inputNameRef = React.useRef('')
-    const inputLinkRef = React.useRef('')
-    function handleSubmit(e) {
-        e.preventDefault();
-      
-        props.onAddPlace({
-          name: inputNameRef.current.value,
-          link: inputLinkRef.current.value
-        });
-        
-      }
+  const [name, setName] = React.useState("");
+  const [link, setLink] = React.useState("");
+  function handleNameChange(e) {
+    setName(e.target.value);
+  }
+  function handleLinkChange(e) {
+    setLink(e.target.value);
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    props.onAddPlace({
+      name: name,
+      link: link,
+    });
+    setName("");
+    setLink("");
+  }
   return (
     <PopupWithForm
       isOpen={props.isOpen}
@@ -26,7 +33,8 @@ function AddPlacePopup(props) {
         placeholder="Название"
         name="place"
         id="place-input"
-        ref={inputNameRef}
+        value={name}
+        onChange={handleNameChange}
         className="popup__input popup__input_place_name"
         required
       />
@@ -35,7 +43,8 @@ function AddPlacePopup(props) {
         type="url"
         name="link"
         id="link-input"
-        ref={inputLinkRef}
+        value={link}
+        onChange={handleLinkChange}
         placeholder="Ссылка на картинку"
         className="popup__input popup__input_place_link"
         required
@@ -44,4 +53,4 @@ function AddPlacePopup(props) {
     </PopupWithForm>
   );
 }
-export default AddPlacePopup
+export default AddPlacePopup;
