@@ -1,7 +1,6 @@
 import React from "react";
 
 function ImagePopup({ card, onClose }) {
-  console.log(card);
   return (
     <div className={`popup popup_img ${card && "popup_opened"}`}>
       <article className="popup__img-article">
